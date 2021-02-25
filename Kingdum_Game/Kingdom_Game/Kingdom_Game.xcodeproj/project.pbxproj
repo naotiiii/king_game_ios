@@ -15,6 +15,10 @@
 		0A820FFB25E4EEEB002B241C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A820FF925E4EEEB002B241C /* LaunchScreen.storyboard */; };
 		0A82100625E4EEEB002B241C /* Kingdom_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82100525E4EEEB002B241C /* Kingdom_GameTests.swift */; };
 		0A82101125E4EEEB002B241C /* Kingdom_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82101025E4EEEB002B241C /* Kingdom_GameUITests.swift */; };
+		0A97F1BE25E75E5E008AE4AC /* CommonWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97F1BD25E75E5E008AE4AC /* CommonWords.swift */; };
+		0A97F1C725E75EC6008AE4AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97F1C625E75EC6008AE4AC /* BaseViewController.swift */; };
+		0A97F1CF25E75EFB008AE4AC /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A97F1CE25E75EFB008AE4AC /* Play.storyboard */; };
+		0A97F1D425E75F0E008AE4AC /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97F1D325E75F0E008AE4AC /* PlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		0A82100C25E4EEEB002B241C /* Kingdom_GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Kingdom_GameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A82101025E4EEEB002B241C /* Kingdom_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kingdom_GameUITests.swift; sourceTree = "<group>"; };
 		0A82101225E4EEEB002B241C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A97F1BD25E75E5E008AE4AC /* CommonWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWords.swift; sourceTree = "<group>"; };
+		0A97F1C625E75EC6008AE4AC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0A97F1CE25E75EFB008AE4AC /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
+		0A97F1D325E75F0E008AE4AC /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,12 @@
 		0A820FED25E4EEE9002B241C /* Kingdom_Game */ = {
 			isa = PBXGroup;
 			children = (
+				0A97F1C525E75EA6008AE4AC /* Base */,
+				0A97F1B925E75DE9008AE4AC /* Resource */,
+				0A97F1B825E75DD0008AE4AC /* StoryBoard */,
+				0A97F1B725E75DC7008AE4AC /* View */,
 				0A820FEE25E4EEE9002B241C /* AppDelegate.swift */,
 				0A820FF025E4EEE9002B241C /* SceneDelegate.swift */,
-				0A820FF225E4EEE9002B241C /* MainViewController.swift */,
-				0A820FF425E4EEE9002B241C /* Main.storyboard */,
 				0A820FF725E4EEEB002B241C /* Assets.xcassets */,
 				0A820FF925E4EEEB002B241C /* LaunchScreen.storyboard */,
 				0A820FFC25E4EEEB002B241C /* Info.plist */,
@@ -126,6 +136,40 @@
 				0A82101225E4EEEB002B241C /* Info.plist */,
 			);
 			path = Kingdom_GameUITests;
+			sourceTree = "<group>";
+		};
+		0A97F1B725E75DC7008AE4AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A820FF225E4EEE9002B241C /* MainViewController.swift */,
+				0A97F1D325E75F0E008AE4AC /* PlayViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A97F1B825E75DD0008AE4AC /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				0A820FF425E4EEE9002B241C /* Main.storyboard */,
+				0A97F1CE25E75EFB008AE4AC /* Play.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		0A97F1B925E75DE9008AE4AC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0A97F1BD25E75E5E008AE4AC /* CommonWords.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0A97F1C525E75EA6008AE4AC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0A97F1C625E75EC6008AE4AC /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A97F1CF25E75EFB008AE4AC /* Play.storyboard in Resources */,
 				0A820FFB25E4EEEB002B241C /* LaunchScreen.storyboard in Resources */,
 				0A820FF825E4EEEB002B241C /* Assets.xcassets in Resources */,
 				0A820FF625E4EEE9002B241C /* Main.storyboard in Resources */,
@@ -258,8 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A97F1C725E75EC6008AE4AC /* BaseViewController.swift in Sources */,
+				0A97F1BE25E75E5E008AE4AC /* CommonWords.swift in Sources */,
 				0A820FF325E4EEE9002B241C /* MainViewController.swift in Sources */,
 				0A820FEF25E4EEE9002B241C /* AppDelegate.swift in Sources */,
+				0A97F1D425E75F0E008AE4AC /* PlayViewController.swift in Sources */,
 				0A820FF125E4EEE9002B241C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
