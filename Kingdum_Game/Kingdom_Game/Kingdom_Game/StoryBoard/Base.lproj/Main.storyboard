@@ -11,7 +11,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="Kingdom_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Kingdom_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,6 +25,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-51-9Dr">
                                         <rect key="frame" x="100" y="151" width="214" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -35,14 +36,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJD-Qq-ysn">
-                                        <rect key="frame" x="100" y="405" width="214" height="40"/>
+                                        <rect key="frame" x="100" y="405" width="214" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.39700472719018787" blue="0.17991979039746819" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="hgp-hb-ATf"/>
+                                            <constraint firstAttribute="height" constant="60" id="hgp-hb-ATf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="START"/>
+                                        <connections>
+                                            <action selector="tappedStartBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nPG-iW-lfE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18056096120000001" green="1" blue="0.92997428940000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -74,10 +78,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rBL-uB-eRn"/>
+                    <connections>
+                        <outlet property="numberText" destination="6CE-51-9Dr" id="Bnk-wu-8Jl"/>
+                        <outlet property="startBtn" destination="ZJD-Qq-ysn" id="0Ly-3o-oLZ"/>
+                        <outlet property="titleLabel" destination="h7v-vb-dax" id="h66-Tk-c8e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="29"/>
+            <point key="canvasLocation" x="854" y="-5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gYu-Im-BoJ">
