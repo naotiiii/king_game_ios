@@ -13,11 +13,12 @@ class PlayViewController: BaseViewController {
     //MARK: - IBOutlet
     @IBOutlet weak var playTitleLabel: UILabel!
     @IBOutlet weak var numberListCollection: UICollectionView!
-        
+    
     // 人数
     var number: Int = 0
     var collectionList: Int = 0
     var collectNumber: Int?
+    var selectedNumber: [Int] = []
     
     //MARK: - func
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ class PlayViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.numberListCollection.reloadData()
     }
     
     /// 初期設定
@@ -66,15 +68,36 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionList
+        if self.number == self.selectedNumber.count {
+            // 全部選択された時
+            return 0
+        } else {
+            // 選択途中
+            return number
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        
-        cell.contentView.backgroundColor = .black
-        
-            
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionCell
+        if self.selectedNumber != [] {
+            var forcedTermination: Bool = false
+            for i in 0...self.selectedNumber.count - 1  {
+                if !forcedTermination  {
+                    if indexPath.row == self.selectedNumber[i] {
+                        // 選択されているセル
+                        cell.contentView.backgroundColor = .white
+                        cell.isUserInteractionEnabled = false
+                        forcedTermination = true
+                    } else {
+                        // 選択されていないセル
+                        cell.contentView.backgroundColor = .black
+                        cell.isUserInteractionEnabled = true
+                    }
+                }
+            }
+        } else {
+            cell.contentView.backgroundColor = .black
+        }
         return cell
     }
     
@@ -83,6 +106,11 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell: CustomCollectionCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionCell else { return }
+        // タップされた番号を追加
+        self.selectedNumber.append(indexPath.row)
+        print("\(self.selectedNumber)")
+        
         if indexPath.row == collectNumber {
             // 王様が選択された場合
             let sb = UIStoryboard.init(name: "Kingdom", bundle: nil)
