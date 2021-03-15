@@ -18,7 +18,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eor-t3-wY9">
                                 <rect key="frame" x="0.0" y="588" width="414" height="308"/>
-                                <color key="backgroundColor" red="0.53429161550000004" green="1" blue="0.33707455790000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.43529411764705883" green="0.96078431372549022" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uh-fq-pNB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="500"/>
@@ -60,7 +60,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.070588235294117646" green="1" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="1" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="i5g-BK-xl9" firstAttribute="leading" secondItem="8uh-fq-pNB" secondAttribute="leading" id="Ifw-nc-cPY"/>
                                     <constraint firstItem="6CE-51-9Dr" firstAttribute="leading" secondItem="8uh-fq-pNB" secondAttribute="leading" constant="100" id="J1m-Oe-PbP"/>

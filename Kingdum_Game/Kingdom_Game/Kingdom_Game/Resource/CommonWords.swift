@@ -26,4 +26,18 @@ class CommonWords: NSObject {
     public class func finishGameTitle() -> String { return "Who is the King??\n王様だ〜れだ??" }
     public class func collectionTitle() -> String { return "King\nor\nCitizen" }
     public class func selectedCellTitle() -> String { return "Selected\n選択済" }
+    
+    // KingdomView
+    public class func kingdomViewTitle() -> String { return "You are the King\nあなたは、王様です。" }
+    public class func explainKingdom() -> String {
+        return "Let's think about the theme\nテーマを考えておきましょう。"
+    }
+    
+    
+    // CitizenView
+    public class func citizenViewTitle(number: Int) -> String { return "You are No.\(number)\nあなたは、\(number)番です。" }
+    public class func explainCitizen() -> String { return "Check the number and press the button\n番号を確認し、ボタンを押してください。" }
+    public class func confirmation() -> String { return "Confirmed\n確認済" }
+    
+    
 }

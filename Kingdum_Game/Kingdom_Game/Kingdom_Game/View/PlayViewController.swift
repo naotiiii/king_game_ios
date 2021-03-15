@@ -16,9 +16,16 @@ class PlayViewController: BaseViewController {
     
     // 人数
     var number: Int = 0
+    // コレクション数
     var collectionList: Int = 0
+    // 王様番号
     var collectNumber: Int?
+    // 選択済み番号
     var selectedNumber: [Int] = []
+    // 市民画面遷移数
+    var count: Int = 0
+    // 市民 残り番号 配列
+    var numberArray: [Int] = []
     
     //MARK: - func
     override func viewDidLoad() {
@@ -47,6 +54,9 @@ class PlayViewController: BaseViewController {
         // 正解番号付与
         self.collectNumber = Int.random(in: 0...self.collectionList)
         print("\(self.collectNumber)")
+        
+        // カウントリセット
+        self.count = 0
     }
     
     /// 再読み込み
@@ -133,6 +143,12 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
             // 平民が選択された場合
             let sb = UIStoryboard.init(name: "Citizen", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "CitizenViewController") as! CitizenViewController
+            if count == 0 {
+                vc.number = number
+            }
+            vc.displayTimes = count
+            vc.numberArray = self.numberArray
+            count += 1
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
