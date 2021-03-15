@@ -17,7 +17,6 @@ class KingdomViewController: BaseViewController {
     @IBOutlet weak var confirmatinoBtn: UIButton!
     
     // MARK: - func
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initview()
@@ -26,11 +25,12 @@ class KingdomViewController: BaseViewController {
     /// 初期画面表示
     private func initview() {
         // label設定
-        self.positionLabel.textColor = .black
+        self.positionLabel.textColor = .blue
         self.explainLabel.textColor = .black
         self.positionLabel.text = CommonWords.kingdomViewTitle()
         self.explainLabel.text = CommonWords.explainCitizen()
         self.confirmatinoBtn.setTitle(CommonWords.confirmation(), for: .normal)
+        self.navigationItem.hidesBackButton = true
     }
 
     /// confirmation タップ処理
