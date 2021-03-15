@@ -46,9 +46,22 @@ class MainViewController: BaseViewController {
 
     // Startボタン タップ時
     @IBAction func tappedStartBtn(_ sender: Any) {
+        // 人数がみ入力の場合
+        guard var number = numberText.text, number.isEmpty else {
+            let okButton: UIAlertAction = UIAlertAction.init(title: CommonWords.ok(), style: .cancel, handler: nil)
+            let ac: UIAlertController = UIAlertController.init(title: CommonWords.empty(), message: CommonWords.explainNumber(), preferredStyle: .alert)
+            ac.addAction(okButton)
+            self.present(ac, animated: true, completion: nil)
+            return
+        }
+        
+        let numberOfPeople = Int(number)
+        
         let sb = UIStoryboard.init(name: "Play", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
-        
+        if let number = numberOfPeople {
+            vc.number = number
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
