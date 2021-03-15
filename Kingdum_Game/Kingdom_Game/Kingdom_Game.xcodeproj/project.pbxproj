@@ -19,6 +19,10 @@
 		0A97F1C725E75EC6008AE4AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97F1C625E75EC6008AE4AC /* BaseViewController.swift */; };
 		0A97F1CF25E75EFB008AE4AC /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A97F1CE25E75EFB008AE4AC /* Play.storyboard */; };
 		0A97F1D425E75F0E008AE4AC /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97F1D325E75F0E008AE4AC /* PlayViewController.swift */; };
+		0A97F20625FF2EDA008AE4AC /* Citizen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A97F20525FF2EDA008AE4AC /* Citizen.storyboard */; };
+		0A97F20B25FF2EF2008AE4AC /* Kingdom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A97F20A25FF2EF2008AE4AC /* Kingdom.storyboard */; };
+		0A97F21025FF2F35008AE4AC /* CitizenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97F20F25FF2F35008AE4AC /* CitizenViewController.swift */; };
+		0A97F21525FF2F46008AE4AC /* KingdomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97F21425FF2F46008AE4AC /* KingdomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		0A97F1C625E75EC6008AE4AC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0A97F1CE25E75EFB008AE4AC /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
 		0A97F1D325E75F0E008AE4AC /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		0A97F20525FF2EDA008AE4AC /* Citizen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Citizen.storyboard; sourceTree = "<group>"; };
+		0A97F20A25FF2EF2008AE4AC /* Kingdom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Kingdom.storyboard; sourceTree = "<group>"; };
+		0A97F20F25FF2F35008AE4AC /* CitizenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenViewController.swift; sourceTree = "<group>"; };
+		0A97F21425FF2F46008AE4AC /* KingdomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingdomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,8 @@
 			children = (
 				0A820FF225E4EEE9002B241C /* MainViewController.swift */,
 				0A97F1D325E75F0E008AE4AC /* PlayViewController.swift */,
+				0A97F20F25FF2F35008AE4AC /* CitizenViewController.swift */,
+				0A97F21425FF2F46008AE4AC /* KingdomViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +162,8 @@
 			children = (
 				0A820FF425E4EEE9002B241C /* Main.storyboard */,
 				0A97F1CE25E75EFB008AE4AC /* Play.storyboard */,
+				0A97F20525FF2EDA008AE4AC /* Citizen.storyboard */,
+				0A97F20A25FF2EF2008AE4AC /* Kingdom.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -279,6 +291,8 @@
 				0A820FFB25E4EEEB002B241C /* LaunchScreen.storyboard in Resources */,
 				0A820FF825E4EEEB002B241C /* Assets.xcassets in Resources */,
 				0A820FF625E4EEE9002B241C /* Main.storyboard in Resources */,
+				0A97F20B25FF2EF2008AE4AC /* Kingdom.storyboard in Resources */,
+				0A97F20625FF2EDA008AE4AC /* Citizen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +322,8 @@
 				0A820FF325E4EEE9002B241C /* MainViewController.swift in Sources */,
 				0A820FEF25E4EEE9002B241C /* AppDelegate.swift in Sources */,
 				0A97F1D425E75F0E008AE4AC /* PlayViewController.swift in Sources */,
+				0A97F21025FF2F35008AE4AC /* CitizenViewController.swift in Sources */,
+				0A97F21525FF2F46008AE4AC /* KingdomViewController.swift in Sources */,
 				0A820FF125E4EEE9002B241C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

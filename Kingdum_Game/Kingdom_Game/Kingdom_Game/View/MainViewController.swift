@@ -16,6 +16,8 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var explainText: UILabel!
     @IBOutlet weak var startBtn: UIButton!
     
+    // 入力値
+    var number: String?
     
     // MARK: - func
     override func viewDidLoad() {
@@ -38,16 +40,17 @@ class MainViewController: BaseViewController {
         self.explainText.text = CommonWords.explainLabelText()
         self.explainText.textColor = .black
         
-         // Color 設定
+        // TextField 設定
         self.numberText.backgroundColor = .white
-        
-        
+        self.numberText.textColor = .black
+        self.numberText.keyboardType = .numberPad
+        self.addToolbar(textField: numberText)
     }
 
     // Startボタン タップ時
     @IBAction func tappedStartBtn(_ sender: Any) {
         // 人数がみ入力の場合
-        guard var number = numberText.text, number.isEmpty else {
+        guard let number = self.number, number != CommonWords.empty() else {
             let okButton: UIAlertAction = UIAlertAction.init(title: CommonWords.ok(), style: .cancel, handler: nil)
             let ac: UIAlertController = UIAlertController.init(title: CommonWords.empty(), message: CommonWords.explainNumber(), preferredStyle: .alert)
             ac.addAction(okButton)
@@ -63,6 +66,34 @@ class MainViewController: BaseViewController {
             vc.number = number
         }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension MainViewController: UITextFieldDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.number = numberText.text
+        self.view.endEditing(true)
+    }
+
+    private func addToolbar(textField: UITextField) {
+        let toolbar = UIToolbar()
+        toolbar.barStyle = UIBarStyle.default
+        toolbar.isTranslucent = true
+        toolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(donePressd))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([doneButton, spaceButton], animated: false)
+        toolbar.isUserInteractionEnabled = true
+        toolbar.sizeToFit()
+        
+        numberText.delegate = self
+        numberText.inputAccessoryView = toolbar
+    }
+
+    @objc func donePressd() {
+        self.number = numberText.text
+        self.view.endEditing(true)
     }
 }
 
