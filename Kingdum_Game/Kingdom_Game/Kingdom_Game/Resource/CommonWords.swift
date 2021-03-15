@@ -21,7 +21,9 @@ class CommonWords: NSObject {
     public class func explainNumber() -> String { return "Plese enter the number of peolple!\n入力フォームに人数を入れてね!" }
     public class func startBtnTitle() -> String { return "START\n開始" }
     
-    
-
-
+    // PlayView
+    public class func headderTitle() -> String { return "Please select one\nひとつ選択してくだい。" }
+    public class func finishGameTitle() -> String { return "Who is the King??\n王様だ〜れだ??" }
+    public class func collectionTitle() -> String { return "King\nor\nCitizen" }
+    public class func selectedCellTitle() -> String { return "Selected\n選択済" }
 }

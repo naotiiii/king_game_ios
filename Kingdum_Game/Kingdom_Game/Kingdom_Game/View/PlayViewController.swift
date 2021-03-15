@@ -28,17 +28,16 @@ class PlayViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.reloadView()
         self.numberListCollection.reloadData()
     }
     
     /// 初期設定
     private func initView() {
         // タイトルテキスト設定
-        self.playTitleLabel.text = CommonWords.ok()
-        self.playTitleLabel.textColor = .black
         self.playTitleLabel.backgroundColor = .white
-        
-        self.numberListCollection.backgroundColor = .white
+        self.playTitleLabel.textColor = .black
+               
         self.numberListCollection.delegate = self
         self.numberListCollection.dataSource = self
         self.collectionList = number - 1
@@ -48,6 +47,16 @@ class PlayViewController: BaseViewController {
         // 正解番号付与
         self.collectNumber = Int.random(in: 0...self.collectionList)
         print("\(self.collectNumber)")
+    }
+    
+    /// 再読み込み
+    private func reloadView() {
+        // タイトルテキスト
+        if self.number == self.selectedNumber.count {
+            self.playTitleLabel.text = CommonWords.finishGameTitle()
+        } else {
+            self.playTitleLabel.text = CommonWords.headderTitle()
+        }
     }
 }
 
@@ -79,24 +88,28 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionCell
+        let label = cell.contentView.viewWithTag(1) as! UILabel
+        label.text = CommonWords.collectionTitle()
+
         if self.selectedNumber != [] {
             var forcedTermination: Bool = false
             for i in 0...self.selectedNumber.count - 1  {
                 if !forcedTermination  {
                     if indexPath.row == self.selectedNumber[i] {
                         // 選択されているセル
-                        cell.contentView.backgroundColor = .white
+                        cell.contentView.backgroundColor = .gray
                         cell.isUserInteractionEnabled = false
+                        label.text = CommonWords.selectedCellTitle()
                         forcedTermination = true
                     } else {
                         // 選択されていないセル
-                        cell.contentView.backgroundColor = .black
+                        cell.contentView.backgroundColor = .systemBlue
                         cell.isUserInteractionEnabled = true
                     }
                 }
             }
         } else {
-            cell.contentView.backgroundColor = .black
+            cell.contentView.backgroundColor = .systemBlue
         }
         return cell
     }
