@@ -13,6 +13,15 @@ class PlayViewController: BaseViewController {
     //MARK: - IBOutlet
     @IBOutlet weak var playTitleLabel: UILabel!
     @IBOutlet weak var numberListCollection: UICollectionView!
+    // 最後に表示するView
+    @IBOutlet weak var finishExampleView: UIView!
+    // 例 Label
+    @IBOutlet weak var forExampleLabel: UILabel!
+    // 番号表示を促す Label
+    @IBOutlet weak var finishedExplainLabel: UILabel!
+    // 番号紹介 Btn
+    @IBOutlet weak var finishNumberBtn: UIButton!
+    @IBOutlet weak var backViewBtn: UIButton!
     
     // 人数
     var number: Int = 0
@@ -22,6 +31,8 @@ class PlayViewController: BaseViewController {
     var collectNumber: Int?
     // 選択済み番号
     var selectedNumber: [Int] = []
+    // 表示画面
+    var display: Int = 0
     // 市民画面遷移数
     var count: Int = 0
     // 市民 残り番号 配列
@@ -41,6 +52,12 @@ class PlayViewController: BaseViewController {
     
     /// 初期設定
     private func initView() {
+        hiddenView(isHideen: true)
+        self.forExampleLabel.text = CommonWords.forExampleText()
+        self.forExampleLabel.textColor = .black
+        self.finishedExplainLabel.text = CommonWords.explainDisplayNumber()
+        self.finishedExplainLabel.textColor = .black
+        self.finishNumberBtn.setTitle(CommonWords.displayNumberBtnTitle(), for: .normal)
         // タイトルテキスト設定
         self.playTitleLabel.backgroundColor = .white
         self.playTitleLabel.textColor = .black
@@ -57,6 +74,16 @@ class PlayViewController: BaseViewController {
         
         // カウントリセット
         self.count = 0
+    }
+    
+    /// 非表示部分設定
+    private func hiddenView(isHideen: Bool) {
+        self.finishExampleView.isHidden = isHideen
+        self.forExampleLabel.isHidden = isHideen
+        self.finishedExplainLabel.isHidden = isHideen
+        self.finishNumberBtn.isHidden = isHideen
+        self.backViewBtn.isHidden = isHideen
+        self.numberListCollection.isHidden = !isHideen
     }
     
     /// 再読み込み
@@ -89,6 +116,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.number == self.selectedNumber.count {
             // 全部選択された時
+            self.hiddenView(isHideen: false)
             return 0
         } else {
             // 選択途中
