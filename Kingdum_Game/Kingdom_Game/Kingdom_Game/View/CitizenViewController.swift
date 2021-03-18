@@ -72,6 +72,7 @@ class CitizenViewController: BaseViewController {
         let nav = self.navigationController
         let vc = nav?.viewControllers[(nav?.viewControllers.count)!-2] as! PlayViewController
         vc.numberArray = self.numberArray
+        vc.displayNumber = self.displayNumber
         self.dismiss(animated: true, completion: nil)
         nav?.popViewController(animated: true)
     }

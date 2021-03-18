@@ -31,8 +31,10 @@ class PlayViewController: BaseViewController {
     var collectNumber: Int?
     // 選択済み番号
     var selectedNumber: [Int] = []
-    // 表示画面
-    var display: Int = 0
+    // 表示された番号
+    var displayNumber: Int = 0
+    // 表示された番号 配列
+    var displayNumberArray: [Int] = []
     // 市民画面遷移数
     var count: Int = 0
     // 市民 残り番号 配列
@@ -94,6 +96,24 @@ class PlayViewController: BaseViewController {
         } else {
             self.playTitleLabel.text = CommonWords.headderTitle()
         }
+        // 選択された番号を順番通り保存
+        self.displayNumberArray.append(self.displayNumber)
+    }
+    
+    /// 正解の番号を表示する画面
+    @IBAction func tappedShowCorrectNumber(_ sender: Any) {
+        self.forExampleLabel.backgroundColor = .systemBlue
+        // 誰がどの番号か正解を表示
+        var correctLabel = CommonWords.everyoneNumber()
+        for i in 0...self.displayNumberArray.count-1 {
+            correctLabel += "\n\(i)番目： No.\(self.displayNumberArray[i])"
+        }
+        self.forExampleLabel.text = correctLabel
+    }
+    
+    /// 最初の画面に戻る
+    @IBAction func backToFirstScreen(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

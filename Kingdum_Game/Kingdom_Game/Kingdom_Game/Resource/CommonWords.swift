@@ -41,6 +41,7 @@ class CommonWords: NSObject {
     public class func forExampleText() -> String { return "お題の例：\n・The first person shakes hands with the second person\n１番の人が、2番の人と握手。" }
     public class func explainDisplayNumber() -> String { return "Display the number\nボタンタップで、番号を表示します↓↓" }
     public class func displayNumberBtnTitle() -> String { return "Correct Number" }
+    public class func everyoneNumber () -> String { return "それぞれの番号は" }
     
     
     
