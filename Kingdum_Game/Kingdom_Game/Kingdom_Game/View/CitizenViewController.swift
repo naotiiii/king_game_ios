@@ -11,6 +11,7 @@ import UIKit
 
 class CitizenViewController: BaseViewController {
     @IBOutlet weak var citizenPositionLabel: UILabel!
+    @IBOutlet weak var citizenImageView: UIImageView!
     @IBOutlet weak var confirmationBtn: UIButton!
     @IBOutlet weak var explainCitizenLabel: UILabel!
     

@@ -89,6 +89,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="citizenImageView" destination="qSj-Kf-hW9" id="n9y-Et-V4v"/>
                         <outlet property="citizenPositionLabel" destination="FXx-dT-57y" id="a24-Uj-Zw5"/>
                         <outlet property="confirmationBtn" destination="Wem-wG-WWe" id="Mh2-vj-EYZ"/>
                         <outlet property="explainCitizenLabel" destination="XJq-dH-j9j" id="LT1-ZM-ITI"/>
