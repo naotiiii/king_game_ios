@@ -59,7 +59,7 @@ class MainViewController: BaseViewController {
         }
         
         let numberOfPeople = Int(numberStr)
-
+        // nilチェック
         guard let number = numberOfPeople else {
             self.okBtnAlert(message: CommonWords.explainNumber())
             return
