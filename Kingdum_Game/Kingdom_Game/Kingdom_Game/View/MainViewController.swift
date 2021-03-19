@@ -50,7 +50,7 @@ class MainViewController: BaseViewController {
     // Startボタン タップ時
     @IBAction func tappedStartBtn(_ sender: Any) {
         // 人数がみ入力の場合
-        guard let number = self.number, number != CommonWords.empty() else {
+        guard let numberStr = self.number, number != CommonWords.empty() else {
             let okButton: UIAlertAction = UIAlertAction.init(title: CommonWords.ok(), style: .cancel, handler: nil)
             let ac: UIAlertController = UIAlertController.init(title: CommonWords.empty(), message: CommonWords.explainNumber(), preferredStyle: .alert)
             ac.addAction(okButton)
@@ -58,15 +58,27 @@ class MainViewController: BaseViewController {
             return
         }
         
-        let numberOfPeople = Int(number)
+        let numberOfPeople = Int(numberStr)
+
+        guard let number = numberOfPeople else {
+            self.okBtnAlert(message: CommonWords.explainNumber())
+            return
+        }
+        
+        // 値の範囲 0<30
+        guard number > 0, number <= 30 else {
+            self.okBtnAlert(message: CommonWords.limitRangeNumber())
+            self.numberText.text = CommonWords.empty()
+            return
+        }
         
         let sb = UIStoryboard.init(name: "Play", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
-        if let number = numberOfPeople {
-            vc.number = number
-        }
+        vc.number = number
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
 }
 
 extension MainViewController: UITextFieldDelegate {

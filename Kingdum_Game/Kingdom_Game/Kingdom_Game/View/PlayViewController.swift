@@ -17,6 +17,7 @@ class PlayViewController: BaseViewController {
     @IBOutlet weak var finishExampleView: UIView!
     // 例 Label
     @IBOutlet weak var forExampleLabel: UILabel!
+    @IBOutlet weak var finishImageView: UIImageView!
     // 番号表示を促す Label
     @IBOutlet weak var finishedExplainLabel: UILabel!
     // 番号紹介 Btn
@@ -32,7 +33,7 @@ class PlayViewController: BaseViewController {
     // 選択済み番号
     var selectedNumber: [Int] = []
     // 表示された番号
-    var displayNumber: Int = 0
+    var displayNumber: Int?
     // 表示された番号 配列
     var displayNumberArray: [Int] = []
     // 市民画面遷移数
@@ -56,9 +57,12 @@ class PlayViewController: BaseViewController {
     private func initView() {
         hiddenView(isHideen: true)
         self.forExampleLabel.text = CommonWords.forExampleText()
+        self.forExampleLabel.backgroundColor = .lightGray
         self.forExampleLabel.textColor = .black
         self.finishedExplainLabel.text = CommonWords.explainDisplayNumber()
         self.finishedExplainLabel.textColor = .black
+        self.finishImageView.backgroundColor = .lightGray
+        self.finishImageView.image = UIImage.init(named: "img_crown")
         self.finishNumberBtn.setTitle(CommonWords.displayNumberBtnTitle(), for: .normal)
         // タイトルテキスト設定
         self.playTitleLabel.backgroundColor = .white
@@ -83,6 +87,7 @@ class PlayViewController: BaseViewController {
         self.finishExampleView.isHidden = isHideen
         self.forExampleLabel.isHidden = isHideen
         self.finishedExplainLabel.isHidden = isHideen
+        self.finishImageView.isHidden = isHideen
         self.finishNumberBtn.isHidden = isHideen
         self.backViewBtn.isHidden = isHideen
         self.numberListCollection.isHidden = !isHideen
@@ -97,16 +102,28 @@ class PlayViewController: BaseViewController {
             self.playTitleLabel.text = CommonWords.headderTitle()
         }
         // 選択された番号を順番通り保存
-        self.displayNumberArray.append(self.displayNumber)
+        if let displayNumber = self.displayNumber {
+            self.displayNumberArray.append(displayNumber)
+        }
+        print("\(self.displayNumberArray.count)")
+        print("\n番号時表示配列：\(self.displayNumberArray)")
     }
     
     /// 正解の番号を表示する画面
     @IBAction func tappedShowCorrectNumber(_ sender: Any) {
         self.forExampleLabel.backgroundColor = .systemBlue
+        print("\(self.displayNumberArray.count)")
+        print("\n\(self.displayNumberArray)")
         // 誰がどの番号か正解を表示
         var correctLabel = CommonWords.everyoneNumber()
         for i in 0...self.displayNumberArray.count-1 {
-            correctLabel += "\n\(i)番目： No.\(self.displayNumberArray[i])"
+            if self.displayNumberArray[i] == 0 {
+                // 王様の場合
+                correctLabel += "\n\(i+1)番目： \(CommonWords.king())"
+            } else {
+                // 市民の場合
+                correctLabel += "\n\(i+1)番目： No.\(self.displayNumberArray[i])"
+            }
         }
         self.forExampleLabel.text = correctLabel
     }

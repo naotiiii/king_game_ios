@@ -19,6 +19,7 @@ class CommonWords: NSObject {
     public class func mainViewLabelTitle() -> String { return "Kingdom Game\n~王様ゲーム~" }
     public class func explainLabelText() -> String { return "Plese enter the number of peolple!\n~人数を入れてね！~"}
     public class func explainNumber() -> String { return "Plese enter the number of peolple!\n入力フォームに人数を入れてね!" }
+    public class func limitRangeNumber() -> String { return "Please enter between 0 and 30\n0から30の間で入れてね!" }
     public class func startBtnTitle() -> String { return "START\n開始" }
     
     // PlayView
@@ -26,6 +27,12 @@ class CommonWords: NSObject {
     public class func finishGameTitle() -> String { return "Who is the King??\n王様だ〜れだ??" }
     public class func collectionTitle() -> String { return "King\nor\nCitizen" }
     public class func selectedCellTitle() -> String { return "Selected\n選択済" }
+    public class func forExampleText() -> String { return "お題の例：\n・The first person shakes hands with the second person\n１番の人が、2番の人と握手。" }
+    public class func everyoneNumber () -> String { return "それぞれの番号は" }
+    public class func king() -> String { return "KING ~王様~" }
+
+    public class func explainDisplayNumber() -> String { return "Display the number\nボタンタップで、番号を表示します↓↓" }
+    public class func displayNumberBtnTitle() -> String { return "Correct Number" }
     
     // KingdomView
     public class func kingdomViewTitle() -> String { return "You are the King\nあなたは、王様です。" }
@@ -38,11 +45,4 @@ class CommonWords: NSObject {
     public class func citizenViewTitle(number: Int) -> String { return "You are No.\(number)\nあなたは、\(number)番です。" }
     public class func explainCitizen() -> String { return "Check the number and press the button\n番号を確認し、ボタンを押してください。" }
     public class func confirmation() -> String { return "Confirmed\n確認済" }
-    public class func forExampleText() -> String { return "お題の例：\n・The first person shakes hands with the second person\n１番の人が、2番の人と握手。" }
-    public class func explainDisplayNumber() -> String { return "Display the number\nボタンタップで、番号を表示します↓↓" }
-    public class func displayNumberBtnTitle() -> String { return "Correct Number" }
-    public class func everyoneNumber () -> String { return "それぞれの番号は" }
-    
-    
-    
 }

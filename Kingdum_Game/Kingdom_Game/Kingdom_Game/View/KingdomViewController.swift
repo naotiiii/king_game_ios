@@ -35,6 +35,10 @@ class KingdomViewController: BaseViewController {
 
     /// confirmation タップ処理
     @IBAction func tappedConfirmation(_ sender: Any) {
+        let nav = self.navigationController
+        let vc = nav?.viewControllers[(nav?.viewControllers.count)!-2] as! PlayViewController
+        // 王様は 0を返す
+        vc.displayNumber = 0
         self.navigationController?.popViewController(animated: true)
     }
 }
