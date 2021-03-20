@@ -1,16 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "img_king_128px.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "crown_100px.png",
+      "filename" : "img_king_256.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "crown_200px.png",
+      "filename" : "img_king_512px.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

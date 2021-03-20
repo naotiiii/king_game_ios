@@ -45,6 +45,7 @@ class CitizenViewController: BaseViewController {
         self.navigationItem.hidesBackButton = true
         self.explainCitizenLabel.textColor = .black
         self.explainCitizenLabel.text = CommonWords.explainCitizen()
+        self.citizenImageView.image = UIImage.init(named: "img_citizen")
         self.confirmationBtn.setTitle(CommonWords.confirmation(), for: .normal)
     }
 

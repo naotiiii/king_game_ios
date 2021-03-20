@@ -29,6 +29,7 @@ class KingdomViewController: BaseViewController {
         self.explainLabel.textColor = .black
         self.positionLabel.text = CommonWords.kingdomViewTitle()
         self.explainLabel.text = CommonWords.explainCitizen()
+        self.kingImage.image = UIImage.init(named: "img_crown")
         self.confirmatinoBtn.setTitle(CommonWords.confirmation(), for: .normal)
         self.navigationItem.hidesBackButton = true
     }

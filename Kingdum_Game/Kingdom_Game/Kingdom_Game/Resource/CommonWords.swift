@@ -23,6 +23,7 @@ class CommonWords: NSObject {
     public class func startBtnTitle() -> String { return "START\n開始" }
     
     // PlayView
+    public class func backBtnTitle() -> String { return "Back" }
     public class func headderTitle() -> String { return "Please select one\nひとつ選択してくだい。" }
     public class func finishGameTitle() -> String { return "Who is the King??\n王様だ〜れだ??" }
     public class func collectionTitle() -> String { return "King\nor\nCitizen" }

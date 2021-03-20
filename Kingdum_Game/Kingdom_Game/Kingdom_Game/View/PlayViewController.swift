@@ -61,7 +61,7 @@ class PlayViewController: BaseViewController {
         self.forExampleLabel.textColor = .black
         self.finishedExplainLabel.text = CommonWords.explainDisplayNumber()
         self.finishedExplainLabel.textColor = .black
-        self.finishImageView.backgroundColor = .lightGray
+//        self.finishImageView.backgroundColor =
         self.finishImageView.image = UIImage.init(named: "img_crown")
         self.finishNumberBtn.setTitle(CommonWords.displayNumberBtnTitle(), for: .normal)
         // タイトルテキスト設定
