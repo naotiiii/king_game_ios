@@ -32,7 +32,7 @@ class CommonWords: NSObject {
     public class func everyoneNumber () -> String { return "それぞれの番号は" }
     public class func king() -> String { return "KING ~王様~" }
 
-    public class func explainDisplayNumber() -> String { return "Display the number\nボタンタップで、番号を表示します↓↓" }
+    public class func explainDisplayNumber() -> String { return "Display the number↓↓\nボタンタップで、番号を表示します↓↓" }
     public class func displayNumberBtnTitle() -> String { return "Correct Number" }
     
     // KingdomView
