@@ -22,6 +22,7 @@ class MainViewController: BaseViewController {
     // MARK: - func
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setBottomBannerView()
         self.initView()
     }
 

@@ -30,6 +30,7 @@ class CitizenViewController: BaseViewController {
     /// 画面表示する前
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setBottomBannerView()
         self.initView()
         self.giveNumber()
     }

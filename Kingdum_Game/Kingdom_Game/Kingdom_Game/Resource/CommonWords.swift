@@ -14,6 +14,12 @@ class CommonWords: NSObject {
     public class func close() -> String { return "CLOSE"}
     public class func empty() -> String { return "" }
     
+    // 広告
+    public class func bannerID() -> String { return "ca-app-pub-8858591747711781/9963083297" }
+    public class func testBannerID() -> String { return "ca-app-pub-3940256099942544/2934735716" }
+    
+    
+    
     // MainView
     public class func mainViewNavigationTitle() -> String { return "Kingdom Gama" }
     public class func mainViewLabelTitle() -> String { return "Kingdom Game\n~王様ゲーム~" }

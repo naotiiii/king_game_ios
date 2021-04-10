@@ -49,6 +49,7 @@ class PlayViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.setBottomBannerView()
         self.reloadView()
         self.numberListCollection.reloadData()
     }
