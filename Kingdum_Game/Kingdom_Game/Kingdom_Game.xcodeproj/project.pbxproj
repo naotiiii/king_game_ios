@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -203,7 +203,6 @@
 				6F5DBCD96A34AC9E2E797B6F /* Pods-Kingdom_Game.debug.xcconfig */,
 				974854A18A92CA9446DDF413 /* Pods-Kingdom_Game.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

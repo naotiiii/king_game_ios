@@ -50,6 +50,7 @@ class PlayViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.setBottomBannerView()
+        self.setInterstitialView()
         self.reloadView()
         self.numberListCollection.reloadData()
     }
@@ -57,6 +58,7 @@ class PlayViewController: BaseViewController {
     /// 初期設定
     private func initView() {
         hiddenView(isHideen: true)
+        self.finishNumberBtn.isEnabled = true
         self.forExampleLabel.text = CommonWords.forExampleText()
         self.forExampleLabel.backgroundColor = .lightGray
         self.forExampleLabel.textColor = .black
@@ -112,6 +114,13 @@ class PlayViewController: BaseViewController {
     
     /// 正解の番号を表示する画面
     @IBAction func tappedShowCorrectNumber(_ sender: Any) {
+        if self.interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+        self.finishNumberBtn.isEnabled = false
+        self.setInterstitialView()
         self.forExampleLabel.backgroundColor = .systemBlue
         print("\(self.displayNumberArray.count)")
         print("\n\(self.displayNumberArray)")

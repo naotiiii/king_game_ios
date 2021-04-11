@@ -9,15 +9,18 @@ import Foundation
 
 /// CommonWords
 class CommonWords: NSObject {
-    // 共通
+    // MARK: - 共通
     public class func ok() -> String { return "OK" }
     public class func close() -> String { return "CLOSE"}
     public class func empty() -> String { return "" }
     
-    // 広告
+    // MARK: - 広告
+    // バナー広告
     public class func bannerID() -> String { return "ca-app-pub-8858591747711781/9963083297" }
     public class func testBannerID() -> String { return "ca-app-pub-3940256099942544/2934735716" }
-    
+    // インンタースティシャル
+    public class func intersitialID() -> String { return "ca-app-pub-8858591747711781/4132828653" }
+    public class func testInterstitialID() -> String { return "ca-app-pub-3940256099942544/4411468910" }
     
     
     // MainView

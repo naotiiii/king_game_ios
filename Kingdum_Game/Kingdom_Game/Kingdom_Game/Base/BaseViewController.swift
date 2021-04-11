@@ -11,10 +11,13 @@ import GoogleMobileAds
 
 /// BaseViewController
 class BaseViewController: UIViewController {
-    
+    // BannerView
     var bannerView: GADBannerView = GADBannerView()
+    // Interstitial
+    var interstitial: GADInterstitialAd?
     
-    // 広告の有無
+    
+    // 本番広告の有無
     var isRelease: Bool = false
     
     override func viewDidLoad() {
@@ -34,7 +37,7 @@ class BaseViewController: UIViewController {
     
     // バーナ広告の設定
     //
-    // isRelease: Bool 本番かどうか
+    //
     public func setBottomBannerView() {
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         bannerView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - self.bannerView.frame.height)
@@ -45,4 +48,27 @@ class BaseViewController: UIViewController {
         
         self.view.addSubview(bannerView)
     }
+    
+    // インタースティシャル広告の設定
+    //
+    //
+    public func setInterstitialView() {
+        let request = GADRequest()
+        let advertiseID = isRelease ? CommonWords.intersitialID() : CommonWords.testInterstitialID()
+        GADInterstitialAd.load(withAdUnitID: advertiseID, request: request) { (ad, error) in
+            if let error = error {
+                print("Failed to load interstitial ad with error:\(error.localizedDescription)")
+                return
+            } else {
+                self.interstitial = ad
+                self.interstitial?.fullScreenContentDelegate = self
+            }
+        }
+    }
+}
+
+extension BaseViewController: GADFullScreenContentDelegate {
+    
+
+
 }
