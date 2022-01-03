@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AppTrackingTransparency
+import AdSupport
 
 /// MainViewController
 class MainViewController: BaseViewController {
@@ -22,6 +24,8 @@ class MainViewController: BaseViewController {
     // MARK: - func
     override func viewDidLoad() {
         super.viewDidLoad()
+        ATTrackingManager.requestTrackingAuthorization { _ in
+        }
         self.setBottomBannerView()
         self.initView()
     }

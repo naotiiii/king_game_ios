@@ -16,10 +16,6 @@ class BaseViewController: UIViewController {
     // Interstitial
     var interstitial: GADInterstitialAd?
     
-    
-    // 本番広告の有無
-    var isRelease: Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,14 +35,22 @@ class BaseViewController: UIViewController {
     //
     //
     public func setBottomBannerView() {
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - self.bannerView.frame.height)
-        bannerView.frame.size = CGSize(width: self.view.frame.width, height: 50)
-        bannerView.adUnitID = self.isRelease ? CommonWords.bannerID() : CommonWords.testBannerID()
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        
-        self.view.addSubview(bannerView)
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            bannerView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - self.bannerView.frame.height)
+            bannerView.frame.size = CGSize(width: self.view.frame.width, height: 50)
+            
+            var barId = ""
+#if DEBUG
+            barId = CommonWords.testBannerID()
+#else
+            barId = CommonWords.bannerID()
+#endif
+            
+            bannerView.adUnitID = barId
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            
+            self.view.addSubview(bannerView)
     }
     
     // インタースティシャル広告の設定
@@ -54,7 +58,15 @@ class BaseViewController: UIViewController {
     //
     public func setInterstitialView() {
         let request = GADRequest()
-        let advertiseID = isRelease ? CommonWords.intersitialID() : CommonWords.testInterstitialID()
+        var adId = ""
+        #if DEBUG
+        adId = CommonWords.testInterstitialID()
+        #else
+        adId = CommonWords.intersitialID()
+        #endif
+        
+        let advertiseID = adId
+        print("----------------------------adid: \(adId)")
         GADInterstitialAd.load(withAdUnitID: advertiseID, request: request) { (ad, error) in
             if let error = error {
                 print("Failed to load interstitial ad with error:\(error.localizedDescription)")
