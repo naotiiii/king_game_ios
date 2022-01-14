@@ -79,7 +79,6 @@ class PlayViewController: BaseViewController {
         
         // 正解番号付与
         self.collectNumber = Int.random(in: 0...self.collectionList)
-        print("\(self.collectNumber)")
         
         // カウントリセット
         self.count = 0
@@ -204,7 +203,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell: CustomCollectionCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionCell else { return }
+        guard let _: CustomCollectionCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionCell else { return }
         // タップされた番号を追加
         self.selectedNumber.append(indexPath.row)
         print("\(self.selectedNumber)")

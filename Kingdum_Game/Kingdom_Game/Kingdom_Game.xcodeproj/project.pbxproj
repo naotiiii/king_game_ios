@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A08C5762621E52900F9D848 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A08C5752621E52900F9D848 /* GoogleService-Info.plist */; };
 		0A820FEF25E4EEE9002B241C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A820FEE25E4EEE9002B241C /* AppDelegate.swift */; };
 		0A820FF125E4EEE9002B241C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A820FF025E4EEE9002B241C /* SceneDelegate.swift */; };
 		0A820FF325E4EEE9002B241C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A820FF225E4EEE9002B241C /* MainViewController.swift */; };
@@ -46,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A08C5752621E52900F9D848 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A820FEB25E4EEE9002B241C /* Kingdom_Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kingdom_Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A820FEE25E4EEE9002B241C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A820FF025E4EEE9002B241C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 		0A820FED25E4EEE9002B241C /* Kingdom_Game */ = {
 			isa = PBXGroup;
 			children = (
-				0A08C5752621E52900F9D848 /* GoogleService-Info.plist */,
 				0A97F1C525E75EA6008AE4AC /* Base */,
 				0A97F1B925E75DE9008AE4AC /* Resource */,
 				0A97F1B825E75DD0008AE4AC /* StoryBoard */,
@@ -325,7 +322,6 @@
 				0A820FF625E4EEE9002B241C /* Main.storyboard in Resources */,
 				0A97F20B25FF2EF2008AE4AC /* Kingdom.storyboard in Resources */,
 				0A97F20625FF2EDA008AE4AC /* Citizen.storyboard in Resources */,
-				0A08C5762621E52900F9D848 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +578,7 @@
 				DEVELOPMENT_TEAM = G89WYP7829;
 				GADApplicationIdentifier = "ca-app-pub-8858591747711781~1008504691";
 				INFOPLIST_FILE = Kingdom_Game/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,7 +588,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = king_game_profile_development;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -606,6 +603,7 @@
 				DEVELOPMENT_TEAM = G89WYP7829;
 				GADApplicationIdentifier = "ca-app-pub-8858591747711781~1008504691";
 				INFOPLIST_FILE = Kingdom_Game/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,7 +614,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

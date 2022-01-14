@@ -24,7 +24,9 @@ class MainViewController: BaseViewController {
     // MARK: - func
     override func viewDidLoad() {
         super.viewDidLoad()
-        ATTrackingManager.requestTrackingAuthorization { _ in
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { _ in
+            }
         }
         self.setBottomBannerView()
         self.initView()
@@ -54,7 +56,7 @@ class MainViewController: BaseViewController {
 
     // Startボタン タップ時
     @IBAction func tappedStartBtn(_ sender: Any) {
-        // 人数がみ入力の場合
+        // 人数が未入力の場合
         guard let numberStr = self.number, number != CommonWords.empty() else {
             let okButton: UIAlertAction = UIAlertAction.init(title: CommonWords.ok(), style: .cancel, handler: nil)
             let ac: UIAlertController = UIAlertController.init(title: CommonWords.empty(), message: CommonWords.explainNumber(), preferredStyle: .alert)
